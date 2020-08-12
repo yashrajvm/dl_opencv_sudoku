@@ -1,2 +1,3 @@
-![SS of result]
-(https://github.com/yashrajvm/dl_opencv_sudoku/blob/master/Screenshot%20from%202020-08-12%2023-15-02.png)
+## python3 train_digit_classifier.py --model output/digit_classifier.h5
+
+## python3 solve_sudoku.py --model output/digit_classifier.h5 --image sudoku_puzzle2.jpg
