@@ -70,7 +70,7 @@ def extract_digit(cell, debug=False):
     (h, w) = thresh.shape
     percentFilled = cv2.countNonZero(mask)/float(w*h)
 
-    if percentFilled < 0.05:
+    if percentFilled < 0.03:
         return None
     
     digit = cv2.bitwise_and(thresh,thresh, mask=mask)

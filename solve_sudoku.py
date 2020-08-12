@@ -54,25 +54,25 @@ for y in range(0,9):
     
     cellLocs.append(row)
 
-    print(">> Successfully implemented OCR :-")
-    puzzle = Sudoku(3, 3, board=board.tolist())
-    puzzle.show()
+print(">> Successfully implemented OCR :-")
+puzzle = Sudoku(3, 3, board=board.tolist())
+puzzle.show()
 
-    print(">> Your answer is getting ready...")
-    solution = puzzle.solve()
-    solution.show_full()
+print(">> Your answer is getting ready...")
+solution = puzzle.solve()
+solution.show_full()
 
-    for (cellRow, boardRow) in zip(cellLocs, solution.board):
-        for (box, digit) in zip(cellRow, boardRow):
-            startX, startY, endX, endY = box
+for (cellRow, boardRow) in zip(cellLocs, solution.board):
+    for (box, digit) in zip(cellRow, boardRow):
+        startX, startY, endX, endY = box
 
-            testX = int((endX - startX) * 0.33)
-            testY = int((endY - startY) * -0.2)
-            testX += startX
-            testY += endY
+        testX = int((endX - startX) * 0.33)
+        testY = int((endY - startY) * -0.2)
+        testX += startX
+        testY += endY
 
-            cv2.putText(puzzleImage, str(digit), (testX,testY), cv2.FONT_HERSHEY_COMPLEX, 0.9, (0,255,255), 2)
-    
-    cv2.imshow(">>Here's your answer ", puzzleImage)
-    cv2.waitKey(0)
+        cv2.putText(puzzleImage, str(digit), (testX,testY), cv2.FONT_HERSHEY_COMPLEX, 0.9, (0,255,255), 2)
+
+cv2.imshow(">>Here's your answer ", puzzleImage)
+cv2.waitKey(0)
 

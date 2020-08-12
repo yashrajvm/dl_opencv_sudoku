@@ -29,6 +29,10 @@ class SudokuNet:
         model.add(Activation("relu"))
         model.add(Dropout(0.5))
 
+        model.add(Dense(64))
+        model.add(Activation("relu"))
+        model.add(Dropout(0.25))
+
         model.add(Dense(classes))
         model.add(Activation("softmax"))
 
